@@ -1,4 +1,14 @@
-var express = require('express');
-var app = express();
+const express = require("express");
+const { Router } = require("express");
 
-console.log('Hello World from starter project');
+const app = express();
+const routes = Router();
+
+routes.get("/test", async index(req, res) {
+           res.json({ success: true });
+           });
+
+app.use(express.json());
+app.use(routes);
+
+app.listen(3001);
